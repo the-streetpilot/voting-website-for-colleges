@@ -1,0 +1,424 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Login Page */
+#login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+#login-page h1 {
+  margin-bottom: 20px;
+}
+
+#login-form {
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login-form label {
+  margin-bottom: 5px;
+}
+
+#login-form input {
+  margin-bottom: 10px;
+}
+
+#login-form button {
+  margin-top: 10px;
+}
+
+/* Admin Panel */
+#admin-panel {
+  display: flex;
+  min-height: 100vh;
+}
+
+#sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#sidebar h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #4b545c;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar ul li {
+  margin: 15px 0;
+}
+
+#sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#sidebar ul li a:hover {
+  background-color: #4b545c;
+}
+
+#sidebar ul li button {
+  width: 100%;
+  padding: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+#sidebar ul li button:hover {
+  background-color: #c82333;
+}
+
+#main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+.content-section {
+  display: none;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  color: #343a40;
+}
+
+/* Analytics Page */
+#analytics-content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+#analytics-content p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Candidates Page */
+.candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.candidate-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.candidate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.candidate-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.candidate-card .card-content {
+  padding: 15px;
+}
+
+.candidate-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: #343a40;
+}
+
+.candidate-card p {
+  margin: 0 0 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.candidate-card button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.candidate-card button:hover {
+  background-color: #0056b3;
+}
+
+#download-sample-excel {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#download-sample-excel:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+/* Election Status Display */
+.election-status-display {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+#election-status-text {
+  margin: 0;
+}
+
+/* Status-specific styles */
+.election-status-display.status-started {
+  background-color: #28a745; /* Green */
+}
+
+.election-status-display.status-stopped {
+  background-color: #dc3545; /* Red */
+}
+
+.election-status-display.status-paused {
+  background-color: #ffc107; /* Yellow */
+}
+
+.election-status-display.status-not-started {
+  background-color: #6c757d; /* Gray */
+}
+
+/* Election Control Page */
+#election-control-page {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+#election-control-page label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 1.1em;
+  color: #333;
+}
+
+#election-control-page input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+#election-control-page button {
+  margin: 10px 5px 10px 0;
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#election-control-page button:hover {
+  background-color: #218838;
+}
+
+#election-control-page #reset-votes {
+  background-color: #dc3545;
+}
+
+#election-control-page #reset-votes:hover {
+  background-color: #c82333;
+}
+
+/* Votes Page */
+#votes-page {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+#votes-page h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #343a40;
+}
+
+#votes-page p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Add New Candidate Section */
+#add-candidate-page {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+#add-candidate-page h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  color: #343a40;
+}
+
+#add-candidate-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#add-candidate-page label {
+  font-weight: bold;
+}
+
+#add-candidate-page input,
+#add-candidate-page textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#add-candidate-page button {
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#add-candidate-page button:hover {
+  background-color: #218838;
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #000;
+}
+

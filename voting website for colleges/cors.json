@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["http://127.0.0.1:5500", "https://college-voting-system-e1c6a.web.app"],
+    "method": ["GET", "PUT", "POST", "DELETE", "OPTIONS"],
+    "responseHeader": ["Content-Type", "Authorization"],
+    "maxAgeSeconds": 3600
+  }
+]

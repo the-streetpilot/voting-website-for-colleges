@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Voting System</title>
+  <link rel="stylesheet" href="index.css">
+  <!-- Firebase SDK Version 8 -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Login Section -->
+    <div id="login-page">
+      <h1>Student Login</h1>
+      <form id="login-form">
+        <label for="register-id">Register ID:</label>
+        <input type="text" id="register-id" placeholder="Enter your Register ID" required>
+        <button type="submit">Send OTP</button>
+      </form>
+      <!-- Google Login Button -->
+      <button id="google-login">Login with Google</button>
+      <!-- reCAPTCHA Container -->
+      <div id="recaptcha-container"></div>
+      <div id="otp-section" style="display: none;">
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" required>
+        <button id="verify-otp">Verify OTP</button>
+      </div>
+    </div>
+
+    <!-- No Election Message and Logout Button -->
+<div id="no-election-section" style="display: none;">
+  <button class="logout-button">Logout</button>
+  <div id="no-election-message">
+    <h2>No Election Currently Going On</h2>
+    <p>There is no active election at the moment. Please check back later.</p>
+  </div>
+</div>
+
+    <!-- Custom Popup Modal -->
+    <div id="custom-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-popup">&times;</span> <!-- Close button -->
+        <p id="popup-message"></p>
+      </div>
+    </div>
+
+    <!-- Voting Section -->
+<div id="voting-page" style="display: none;">
+  <h1>Vote for Candidates</h1>
+  <button class="logout-button">Logout</button>
+  <p>Election Status: <span id="user-election-status">Not Started</span></p>
+  <p>Time Remaining: <span id="countdown-timer">00:00:00</span></p>
+  <!-- Dynamic Position Sections -->
+  <div id="position-sections">
+    <!-- Position sections will be dynamically added here -->
+  </div>
+</div>
+
+<div id="winner-section" style="display: none;">
+  <h1>Election Results</h1>
+  <button class="logout-button">Logout</button>
+  <div id="winners-container">
+    <!-- Winners will be dynamically added here -->
+  </div>
+</div>
+
+      
+    </div>
+<!-- Winner Section -->
+
+
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="app.js"></script>
+  
+</body>
+</html>

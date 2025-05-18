@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="admin.css">
+  <!-- Firebase SDK Version 8 -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Login Section -->
+    <div id="login-page">
+      <h1>Admin Login</h1>
+      <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" autocomplete="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" autocomplete="current-password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Admin Panel (Hidden by Default) -->
+    <div id="admin-panel" style="display: none;">
+      <!-- Sidebar Menu -->
+      <div id="sidebar">
+        <h2>Admin Panel</h2>
+        <ul> 
+          <li><a href="#" id="analytics-link">Analytics</a></li>
+          <li><a href="#" id="candidates-link">Candidates</a></li>
+          <li><a href="#" id="add-candidate-link">Add New Candidate</a></li> <!-- New Menu Item -->
+          <li><a href="#" id="add-voters-link">Add Voters</a></li>
+          <li><a href="#" id="election-control-link">Election Control</a></li>
+          <li><button id="logout-button">Logout</button></li>
+        </ul>
+      </div>
+
+      <!-- Main Content Area -->
+      <div id="main-content">
+        <!-- Analytics Section -->
+        <div id="analytics-page" class="content-section">
+          <h2>Analytics</h2>
+          <div id="analytics-content">
+            <p>Total Votes: <span id="total-votes">0</span></p>
+            <div id="votes-per-candidate"></div>
+          </div>
+        </div>
+
+        <!-- Main Content Area -->
+      <div id="main-content">
+        <!-- Analytics Section -->
+        <div id="analytics-page" class="content-section">
+          <h2>Analytics</h2>
+          <div id="analytics-content">
+            <p>Total Votes: <span id="total-votes">0</span></p>
+            <div id="votes-per-candidate"></div>
+          </div>
+        </div>
+
+        <!-- Candidates Section -->
+        <div id="candidates-page" class="content-section" style="display: none;">
+          <h2>Candidates</h2>
+          <div id="candidates" class="candidates-grid"></div>
+        </div>
+
+  <!-- Edit Candidate Modal -->
+<div id="edit-candidate-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Edit Candidate</h2>
+    <form id="edit-candidate-form">
+      <label for="edit-candidate-name">Name:</label>
+      <input type="text" id="edit-candidate-name" required>
+      
+      <label for="edit-candidate-position">Position:</label>
+      <input type="text" id="edit-candidate-position" required>
+      
+      <label for="edit-candidate-bio">Bio:</label>
+      <textarea id="edit-candidate-bio" required></textarea>
+      
+      <label for="edit-candidate-image">Image:</label>
+      <input type="file" id="edit-candidate-image" accept="image/*">
+      
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+  <!-- Add New Candidate Section -->
+  <div id="add-candidate-page" class="content-section" style="display: none;">
+    <h2>Add New Candidate</h2>
+    <form id="candidate-form">
+      <label for="candidate-name">Name:</label>
+      <input type="text" id="candidate-name" required>
+      <label for="candidate-position">Position:</label>
+      <input type="text" id="candidate-position" required>
+      <label for="candidate-bio">Bio:</label>
+      <textarea id="candidate-bio" required></textarea>
+      <label for="candidate-image">Image:</label>
+      <input type="file" id="candidate-image" accept="image/*" required>
+      <button type="submit">Add Candidate</button>
+    </form>
+  </div>
+  
+<!-- Add Voters Section -->
+<div id="add-voters-page" class="content-section" style="display: none;">
+  <h2>Add Voters</h2>
+  <button id="download-sample-excel">Download Sample Excel</button>
+  <form id="add-voters-form">
+    <label for="voters-file">Upload Excel File:</label>
+    <input type="file" id="voters-file" accept=".xlsx, .xls" required>
+    <button type="submit">Upload Voters</button>
+  </form>
+  <button id="reset-voters-btn" style="background-color: red;">Reset All Voters</button> <!-- Reset button -->
+  <h3>Voters List</h3>
+  <ul id="voters-list"></ul> <!-- Display voters -->
+</div>
+
+
+  <!-- Election Control Section -->
+<div id="election-control-page" class="content-section" style="display: none;">
+  <!-- Election Status Display -->
+  <div id="election-status-display" class="election-status-display">
+    <p id="election-status-text">No Election Going On</p>
+  </div>
+
+  <h2>Election Control</h2>
+  <label for="start-time">Start Time:</label>
+  <input type="datetime-local" id="start-time" required>
+  <label for="end-time">End Time:</label>
+  <input type="datetime-local" id="end-time" required>
+  <button id="set-duration">Set Duration</button>
+  <button id="start-election">Start Election</button>
+  <button id="stop-election">Stop Election</button>
+  <button id="pause-election">Pause Election</button>
+  <button id="end-election">End Election</button> <!-- New button for ending the election -->
+  <button id="reset-votes">Reset Votes</button>
+  <p>Election Status: <span id="election-status">Not Started</span></p>
+</div>
+</div>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

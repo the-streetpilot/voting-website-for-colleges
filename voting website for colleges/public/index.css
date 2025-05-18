@@ -1,0 +1,282 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  #app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fff;
+  }
+  
+  h1, h2, h3 {
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  /* Login Page */
+  #login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  #login-page h1 {
+    margin-bottom: 20px;
+  }
+  
+  #login-form {
+    width: 300px;
+  }
+  
+  #otp-section {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  #google-login {
+    margin-top: 20px;
+    background-color: #db4437;
+  }
+  
+  #google-login:hover {
+    background-color: #c23321;
+  }
+  
+  /* Voting Page */
+  #voting-page {
+    display: none;
+    padding: 20px;
+  }
+  
+  #voting-page h1 {
+    margin-bottom: 20px;
+  }
+  
+  #position-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .position-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .position-section h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .candidates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .candidate-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .candidate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .candidate-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .candidate-card .card-content {
+    padding: 15px;
+  }
+  
+  .candidate-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #343a40;
+  }
+  
+  .candidate-card p {
+    margin: 0 0 10px;
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  .candidate-card button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .candidate-card button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Popup modal styling */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 18px;
+    max-width: 400px;
+    width: 80%;
+    position: relative;
+  }
+  
+  .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .close-popup:hover {
+    color: #000;
+  }
+  #no-election-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#no-election-message h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#no-election-message p {
+    color: #555;
+}
+#no-election-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#no-election-message {
+  margin-top: 20px;
+}
+
+/* Winner Section */
+#winner-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 20px;
+  
+}
+
+/* Winner Card Styles */
+.winner-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.winner-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.winner-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.winner-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.winner-info {
+  text-align: center;
+}
+
+.winner-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+}
